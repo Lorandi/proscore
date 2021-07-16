@@ -1,71 +1,50 @@
-const data = require('./pro.json');
 
-var age = data.age;
-var education_level =  data.education_level;
-var sales = data.past_experiences.sales;
-var support = data.past_experiences.support;
-var download_speed =  data.internet_test.download_speed;
-var upload_speed = data.internet_test.upload_speed;
-var writing_score =  data.writing_score;
-var referral_code = data.referral_code;
-var score = 0;
 
-function updateScore(){
-  if(age < 18){
-    //to do
-  }
+var http = require('http');
+var fs = require('fs');
 
-  if(education_level === "high_school" ){
-    score += 1;    
-  }
-  
-  if(education_level === "bachelors_degree_or_high"){
-    score += 2
-  }
+// const { outroTeste } = require('./outroTeste.js');
 
-  if(sales){
-    score += 5;
-  }
 
-  if(support){
-    score += 3;
-  }
+http.createServer(function (req, res) {
+  fs.readFile('testeHtml.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+}).listen(8080);
 
-  if(download_speed > 50){
-    score += 1;
-  }
-
-  if(download_speed < 5){
-    score -= 1;
-  }
-
-  if(upload_speed > 50){
-    score += 1;
-  }
-
-  if(upload_speed < 5){
-    score -= 1;
-  }
-
-  if(writing_score < 0.3){
-    score -= 1;
-  }
-
-  if(writing_score >=  0.3 && writing_score <=  0.7){
-    score += 1;
-  }
-
-  if( writing_score >  0.7){
-    score += 2;
-  }
-
-  if(referral_code === "token1234" ){
-    score += 1;
-  }
-
-  
+var proData = {
+  "age": 35,
+  "education_level": "bachelors_degree_or_high",
+  "past_experiences": {
+    "sales": true, 
+    "support": true, },
+  "internet_test": { 
+    "download_speed": 51, 
+    "upload_speed": 51  },
+  "writing_score": 0.8,
+  "referral_code": "token1234"
 }
-updateScore()
-console.log(score)
+
+
+   fs.writeFile('proData.json', JSON.stringify(proData) , function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+ })
+
+
+
+
+
+
+
+
+// fs.writeFile('proData.json', JSON.stringify(proData) , function (err) {
+//   if (err) throw err;
+//   console.log('Saved!');
+// });
+
+
 
 
