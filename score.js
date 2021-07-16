@@ -74,7 +74,7 @@ import data from './proData.json'
   return console.log("Score do candidato é " + score);  
 };
 
-proScore();
+//proScore();
 
 
 
