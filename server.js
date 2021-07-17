@@ -1,17 +1,27 @@
-const customExpress = require('./config/customExpress');
-const connection = require('./database/connection');
-const Tables = require('./database/tables.js')
+const express = require('express')
+const app = express()
+const fs = require('fs');
+const proData = require('./proData')
+const proScore = require('./proScore')
 
-connection.connect(error =>{
-  if(error){
-    console.log(error)
-  }else{
-    console.log("database connection established  port 3306")
-    Tables.init(connection)
-    const app = customExpress();
-    app.listen(3000, ()=> console.log("server at port 3000"))
-  }
+
+app.get('/', (req, res) => {
+  fs.readFile('index.html', function (err, data) {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write(data);
+    return res.end();
+  });
 })
 
+app.post('/', (req, res) => {
+  fs.writeFile('proData.json', JSON.stringify(proData), function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+    res.send("Posted")
+    proScore()
+    return res.end();
+  });
+});
 
+app.listen(3000, () => console.log("server at port 3000"))
 
