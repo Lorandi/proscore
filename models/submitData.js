@@ -1,14 +1,14 @@
 const connection = require('../database/connection')
 
 class SubmitData {
-  add(data){
+  add(data,res){
     const sql = 'INSERT INTO ProsData SET ?'
     
     connection.query(sql, data, (error, result) =>{
       if(error){
-        console.log(error)
+        res.status(400).json(error)
       }else{
-        console.log(result)
+        res.status(201).json(result)
       }
     })
   }

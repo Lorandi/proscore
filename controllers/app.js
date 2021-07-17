@@ -5,7 +5,6 @@ module.exports = app => {
 
   app.post('/', (req, res) => {
     const data = req.body;
-    SubmitData.add(data) 
-    res.send('doing POST')
+    SubmitData.add(data,res) 
   })
 }
