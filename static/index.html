@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pro Portal</title>
+  </head>
+
+  <body>
+    <h1>Pro Portal</h1>
+    <!-- <form action="" method="post"> -->
+    <form>
+      <div class="formBox" >
+        <label for="age" >Age:</label>
+        <input id="age" type="number" name="age" placeholder="Age" required/>
+      </div>
+      <div class="formBox" >
+        <label for="education_level">Education Leve: </label>
+        <select id="education_level" type="number" name="education_level" required>
+          <option disabled selected value> -- select an option -- </option>
+          <option value="no_education">No education</option>
+          <option value="high_school">High school</option>
+          <option value="bachelors_degree_or_high">
+            Bachelors degree or high
+          </option>
+        </select>
+      </div>
+      <div class="formBox" >
+        <label for="past_experiences">Past Experience </label>
+        <div>
+          <label for="sales">Sales </label>
+          <select id="sales" name="sales" required>
+            <option disabled selected value>  </option>
+            <option value="sales">Yes</option>
+            <option value="sales">No</option>
+          </select>
+        </div>        
+        <div>
+          <label for="support">Support </label>
+          <select id="support" name="support" required>
+            <option disabled selected value> -- select an option -- </option>
+            <option value="support">Yes</option>
+            <option value="support">No</option>
+          </select>
+        </div>        
+      </div>
+      <div class="formBox" >
+        <label for="internet_test">Internet speed</label>
+        <input id="download_speed" type="number" name="download_speed" placeholder="Download speed" required/>
+        <input id="upload_speed" type="number" name="upload_speed" placeholder="Upload speed"required/>
+      </div>
+      <div class="formBox" >
+        <label for="writing_score">Writing score</label>
+        <input id="writing_score" type="number" name="writing_score" placeholder="Writing score" required/>
+      </div>
+      <div class="formBox">
+        <label for="referral_code">Referral code</label>
+        <input id="referral_code" type="text" name="referral_code" placeholder="Referral code"/>
+      </div>
+      <div class="formBox">
+        <button id="button">Submit</button>
+      </div>
+      <div id='proJson'>
+        <pre></pre>
+      </div>
+    </form>
+    <script src="bundle/getData.js"></script>
+  </body>
+</html>

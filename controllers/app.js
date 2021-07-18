@@ -1,10 +1,16 @@
-const SubmitData = require('../models/submitData');
+const express = require('express')
+const app = express()
+const proResult = require('../proResult')
 
-module.exports = app => {
-  app.get('/', (req, res) => res.send('realizando GET'))
+app.use(express.json())
 
-  app.post('/', (req, res) => {
-    const data = req.body;
-    SubmitData.add(data,res) 
-  })
-}
+app.get('/', (req, res) => {
+  res.send("Pro portal")
+})
+
+app.post('/', (req, res) => {
+  const pro = req.body     
+  res.json(proResult(pro))
+})
+
+module.exports = app;

@@ -19,3 +19,7 @@ responsabilites:
 
  $npm install MySQL
 
+ $npm install browserify //to read require() on client-side javascript
+ $ browserify static/getData.js -o bundle/getData.js
+ or $ npm run getData
+
