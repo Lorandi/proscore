@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "getData": "browserify static/getData.js -o bundle/getData.js"
+    "eslint": "npx eslint *.js",
+    "eslint:fix": "npx eslint *.js --fix"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,13 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.12",
     "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "jest": "^27.0.6"
   }
 }
