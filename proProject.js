@@ -1,18 +1,37 @@
-// The project "Calculate the Dark Matter of the universe for Nasa" requires Pros with score greater than 10
-// The project "Determine if the Schrodinger's cat is alive" requires Pros with score greater than 5
-// The project "Attend to users support for a YXZ Company" requires Pros with score greater than 3
-// The project "Collect specific people information from their social media for XPTO Company" requires Pros with score greater than 2
-
 const updateScore = require('./updateScore')
 
+const projects = require('./projectsData')
 
-const proProject = (props) => { 
-  const score = updateScore(props); 
-  if (props.age < 18){
-    return "ta fora"
-  }else{
-    return console.log("menor que 10")
+const proProject = (props) => {
+  const score = updateScore(props);
+  let selected_project = "";
+  let eligible_projects = [];
+  let ineligible_projects = [];
+
+  if (props.age < 18) {
+    for (i = 0; i < projects.length; i++) {
+      ineligible_projects.push(projects[i].name)
+    }
+  } else {
+    for (i = 0; i < projects.length; i++) {
+      if (projects[i].requires < score) {
+        eligible_projects.push(projects[i].name)
+      }
+      else {
+        ineligible_projects.push(projects[i].name)
+      }
+    }
+    //projects were sorted from highest to lowest "requires" before import and that's why you can use eligible_projects[0] as selected_projec
+    if (eligible_projects && eligible_projects.length > 0) {
+      selected_project = eligible_projects[0];
+    }
+
+    return {
+      "selected_project": selected_project,
+      "eligible_projects": eligible_projects,
+      "ineligible_projects": ineligible_projects,
+    }
   }
 }
 
-module.exports = proProject;
+  module.exports = proProject;
