@@ -1,4 +1,3 @@
-
 const calcProScore = (pro) => {
   const educationLevel = pro.education_level
   const sales = pro.past_experiences.sales
@@ -10,52 +9,52 @@ const calcProScore = (pro) => {
 
   let score = 0
 
-  if (educationLevel === 'no_education' || educationLevel === 'high_school' || educationLevel === 'bachelors_degree_or_high') {
-    if (educationLevel === 'high_school') { score += 1 }
-    if (educationLevel === 'bachelors_degree_or_high') { score += 2 }
-  } else {
-    console.log('treta')
+  switch (educationLevel) {
+    case 'no_education':
+      break
+    case 'high_school':
+      score += 1
+      break
+    case 'bachelors_degree_or_high':
+      score += 2
+      break
   }
 
-  if (sales) {
-    score += 5
+  if (sales) score += 5
+
+  if (support) score += 3
+
+  switch (true) {
+    case downloadSpeed > 50:
+      score += 1
+      break
+    case downloadSpeed < 5:
+      score -= 1
+      break
+  }
+  switch (true) {
+    case uploadSpeed > 50:
+      score += 1
+      break
+    case uploadSpeed < 5:
+      score -= 1
+      break
   }
 
-  if (support) {
-    score += 3
+  switch (true) {
+    case writingScore < 0.3:
+      score -= 1
+      break
+    case writingScore > 0.7:
+      score += 2
+      break
+    default:
+      score += 1
+      break
   }
 
-  if (downloadSpeed > 50) {
-    score += 1
-  }
+  if (referralSode === 'token1234') score += 1
 
-  if (downloadSpeed < 5) {
-    score -= 1
-  }
-
-  if (uploadSpeed > 50) {
-    score += 1
-  }
-
-  if (uploadSpeed < 5) {
-    score -= 1
-  }
-
-  if (writingScore < 0.3) {
-    score -= 1
-  }
-
-  if (writingScore >= 0.3 && writingScore <= 0.7) {
-    score += 1
-  }
-
-  if (writingScore > 0.7) {
-    score += 2
-  }
-
-  if (referralSode === 'token1234') {
-    score += 1
-  }
   return score
 }
 
