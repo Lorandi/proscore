@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "eslint": "npx eslint *.js",
-    "eslint:fix": "npx eslint *.js --fix"
+    "eslint:fix": "npx eslint *.js --fix",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
