@@ -6,9 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "eslint": "npx eslint *.js",
-    "eslint:fix": "npx eslint *.js --fix",
-    "test": "jest"
-  },
+    "eslint:fix": "npx eslint *.js --fix"
+      },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lorandi/cloudhumans.git"
