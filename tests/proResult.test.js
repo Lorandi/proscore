@@ -1,4 +1,4 @@
-const proResult = require("./proResult");
+const proResult = require("../controllers/proResult");
 
 describe("final test of application", () => {
   test("should return json of projects", () => {
