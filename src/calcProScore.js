@@ -1,3 +1,7 @@
+// The purpose of this file is to calculate the score of the Pros, receiving the
+// information that came from the frontend after having been validated by
+//* *validateData.js**
+
 const calcProScore = (pro) => {
   const educationLevel = pro.education_level
   const sales = pro.past_experiences.sales
@@ -9,6 +13,7 @@ const calcProScore = (pro) => {
 
   let score = 0
 
+  // improve or keep the same score according to the education level
   switch (educationLevel) {
     case 'no_education':
       break
@@ -20,10 +25,13 @@ const calcProScore = (pro) => {
       break
   }
 
+  // improve score if Pro has past expirience on sales
   if (sales) score += 5
 
+  // improve score if Pro has past expirience on support
   if (support) score += 3
 
+  // improve, keep the same or deducted score point according to the download speed
   switch (true) {
     case downloadSpeed > 50:
       score += 1
@@ -32,6 +40,7 @@ const calcProScore = (pro) => {
       score -= 1
       break
   }
+  // improve, keep the same or deducted score point according to the upload speed
   switch (true) {
     case uploadSpeed > 50:
       score += 1
@@ -41,6 +50,7 @@ const calcProScore = (pro) => {
       break
   }
 
+  // improve or deducted score point according to the writing score
   switch (true) {
     case writingScore < 0.3:
       score -= 1
@@ -53,6 +63,7 @@ const calcProScore = (pro) => {
       break
   }
 
+  // improve score if Pro has a referral code
   if (referralSode === 'token1234') score += 1
 
   return score

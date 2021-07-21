@@ -1,7 +1,12 @@
-// Project name and requires information.
+// This file stores the project data and establishes a sort from the one that
+// demands the highest score to the one with the lowest demand. This sort was
+// created to facilitate the use of information in other parts of the application.
+
 // When adding new projects, it is not necessary to put them in order
+
 // The function projectsOrder() bellow will sort them.
 
+// This data was given by defaul.
 const projects = [
   {
     name: 'calculate_dark_matter_nasa',
