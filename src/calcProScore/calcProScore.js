@@ -2,12 +2,11 @@
 // information that came from the frontend after having been validated by
 //* *validateData.js**
 
-const EducationLevelScore = require('./calcProScore/EducationLevel')
-const SalesAndSupportScore = require('./calcProScore/SalesAndSupportScore')
-const InternetScore = require('./calcProScore/InternetScore')
-const WritingScore = require('./calcProScore/WritingScore')
-const ReferralCodeScore = require('./calcProScore/ReferralCodeScore')
-
+const EducationLevelScore = require('./EducationLevelScore')
+const SalesAndSupportScore = require('./SalesAndSupportScore')
+const InternetScore = require('./InternetScore')
+const WritingScore = require('./WritingScore')
+const ReferralCodeScore = require('./ReferralCodeScore')
 
 const calcProScore = (pro) => {
     let score = (0

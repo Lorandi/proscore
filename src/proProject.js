@@ -2,7 +2,7 @@
 // with their score. It uses the return from both **projectsData.js** and
 //* *calcProScore.js**
 
-const calcProScore = require('./calcProScore')
+const calcProScore = require('./calcProScore/calcProScore')
 const projects = require('./projectsData')
 
 const proProject = (pro) => {

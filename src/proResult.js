@@ -1,11 +1,9 @@
 // This file receives the return from all the others files and returns
 // the JSON with the result to be sent by POST by app.js.
 
-const calcProScore = require('./calcProScore')
+const calcProScore = require('./calcProScore/calcProScore')
 const proProject = require('./proProject')
-const validateData = require('./validateData')
-
-
+const validateData = require('./validateData/validateData')
 
 const proResult = (pro) => {  
   const score = calcProScore(pro) // Pro score
