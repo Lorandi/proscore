@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lorandi/cloudhumans.git"
+    "url": "git+https://github.com/Lorandi/proscore.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lorandi/cloudhumans/issues"
+    "url": "https://github.com/Lorandi/proscore/issues"
   },
-  "homepage": "https://github.com/Lorandi/cloudhumans#readme",
+  "homepage": "https://github.com/Lorandi/proscore#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "consign": "^0.1.6",
