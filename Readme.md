@@ -82,11 +82,11 @@ For this code I use Nodejs, Express, Nodemon, Jest, ESLint. This was my first ba
 ## Comments about project
 The files that I worked harder are in folder src. Here is a brief explanation of what each one does.
 
- - **validateData.js** - The purpose of this file is to validate the data that arrives from the frontend and verify if it is in agreement with what the application needs. If any data is in disagreement, a message appears in the terminal (console.log("") and also in the program that is running the API.
+ - **folder validateData** - The purpose of this files is to validate the data that arrives from the frontend and verify if it is in agreement with what the application needs. If any data is in disagreement, a message appears in the terminal (console.log("") and also in the program that is running the API.
 
  - **projectData.js** - This file stores the project data and establishes a sort from the one that demands the highest scorer to the one with the lowest demand. This sort was created to facilitate the use of information in other parts of the application.
 
- - **calcProject.js** - The purpose of this file is to calculate the score of the Pros, receiving the information that came from the frontend after having been validated by **validateData.js**
+ - **folder calcProject** - The purpose of this files is to calculate the score of the Pros, receiving the information that came from the frontend after having been validated by **validateData.js**
 
  - **proProject.js** - This file serves to allocate the Pros in the projects that are in accordance with their score. It uses the return from both **projectsData.js** and **calcProScore.js**
 
