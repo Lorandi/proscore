@@ -5,13 +5,17 @@ const calcProScore = require('./calcProScore')
 const proProject = require('./proProject')
 const validateData = require('./validateData')
 
-const proResult = (pro) => {
+
+
+const proResult = (pro) => {  
   const score = calcProScore(pro) // Pro score
   const project = proProject(pro) // Projects for the Pro
   const validate = validateData(pro) // validate data
   let proFinalResult = {}
 
   // if any data from Pros is invalid, will enter de this "if"
+  
+  
   if (validate !== '') {
     proFinalResult = {
       validate: validate

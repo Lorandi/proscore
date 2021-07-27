@@ -3,7 +3,7 @@
 // If any data is in disagreement, a message appears in the terminal
 // (console.log("") and also in the program that is running the API.
 
-const validateData = (pro) => { // pro cames from req.body
+const validateData = (pro) => { // pro cames from req.body 
   const age = pro.age
   const educationLevel = pro.education_level
   const sales = pro.past_experiences.sales

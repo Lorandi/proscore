@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const proResult = require('./src/proResugitlt')
+const proResult = require('./src/proResult')
 
 app.use(express.json())
 
