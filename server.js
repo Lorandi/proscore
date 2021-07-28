@@ -2,10 +2,15 @@ const express = require('express')
 const app = express()
 const proResult = require('./src/proResult')
 
-app.use(express.json())
 
+app.use(express.json())
+// app.use(express.static("index.html"));
+
+// app.get('/', (req, res) => {
+//   res.send('Pro Portal')
+// })
 app.get('/', (req, res) => {
-  res.send('Pro Portal')
+  res.sendFile(__dirname + "/public/index.html")
 })
 
 app.post('/', (req, res) => {

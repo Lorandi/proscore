@@ -72,7 +72,7 @@ To use this aplication you will need a program that tests API, like Postman http
  - 7 - click SEND
  - 8 - here is the response object
 
-<img src="./image/postman.jpg" alt="postman"/>
+<img src="./public/image/postman.jpg" alt="postman"/>
 
 You can check the results here https://documenter.getpostman.com/view/16691708/TzsWtpwK#c0f6ace1-293b-4b96-8a02-970a36f22864
 
@@ -95,7 +95,7 @@ The files that I worked harder are in folder src. Here is a brief explanation of
 ## How to test 
 To check out if the code is working properly, you need to run Jest
 ```
-npx jest
+npm run test
 ```
 To learn more about Jest https://jestjs.io/
 
@@ -103,11 +103,11 @@ To learn more about Jest https://jestjs.io/
 ESLint statically analyzes the code to quickly find problems.
 Go to the folder you want to analize and run ESLint.
 ```
-npx eslint *.js
+npm run eslint
 ```  
 and to fix the problems
 ```
-npx eslint *.js --fix
+npm run eslint:fix
 ```
 To learn more about ESLint https://eslint.org/
 

@@ -1,4 +1,4 @@
-const calcProScore = require('../src/calcProScore')
+const calcProScore = require('../src/calcProScore/calcProScore')
 
 describe('check the output of calcProScore', () => {
   test('should return the score of the pro', () => {

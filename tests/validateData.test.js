@@ -1,4 +1,4 @@
-const validateData = require('../src/validateData')
+const validateData = require('../src/validateData/validateData')
 
 describe('check if validateData is working', () => {
   test('should return a string if any data from front-end json is invalid', () => {
