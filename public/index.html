@@ -1,13 +1,119 @@
 <!DOCTYPE html>
 <html lang="pr-br">
-<head>
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProScore</title>
+  </head>
+  <body>
+    <form method="post">
+      <div class="formBox">
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="age" required />
+      </div>
+      <br />
+      <div class="formBox">
+        <label for="educationLevel">Education Level</label>
+        <select id="educationLevel" name="educationLevel" required>
+          <option value="no_education">No education</option>
+          <option value="primary_scholl">Primary scholl</option>
+          <option value="high_school">High school</option>
+          <option value="bachelors">Bachelors</option>
+          <option value="masters">Masters</option>
+          <option value="doctorals">Doctorals</option>
+        </select>
+      </div>
+      <br />
+      <div class="formBox">
+        <label for="past_experiences"> Past Expirience</label>
+        <br />
+        <div name="past_experiences" id="past_experiences">
+          <input id="sales" type="checkbox" name="sales" />
+          <label for="sales"> Sales</label>
+          <input id="support" type="checkbox" name="support" />
+          <label for="support"> Support</label>
+        </div>
+      </div>
+      <br />
+      <div class="formBox">
+        <label for="internet"> Internet</label><br />
+        <label for="download_speed">Download Speed</label>
+        <input
+          type="number"
+          id="download_speed"
+          placeholder="Download Speed"
+          required
+        />
+        <label for="upload_speed">Upload Speed</label>
+        <input
+          type="number"
+          id="upload_speed"
+          placeholder="Upload Speed"
+          required
+        />
+      </div>
+      <br />
+      <div class="formBox">
+        <label for="writing_score">Writing score</label>
+        <input
+          type="number"
+          id="writing_score"
+          placeholder="from 0 to 1"
+          required
+        />
+      </div>
+      <br />
+      <div class="formBox">
+        <label for="referral_code">Referral Code</label>
+        <input type="text" id="referral_code" placeholder="" />
+      </div>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProScore</title>
-</head>
-<body>
-  <h1>Teste</h1>
-  
-</body>
+      <br />
+      <div class="formBox">
+        <button type="submit" id="btn">Click to Add</button>
+      </div>
+      <div id="msg">
+        <pre></pre>
+      </div>
+    </form>
+    <script>
+      // let pros = [];
+      // example {id:1592304983049, title: 'Deadpool', year: 2015}
+      const addPro = (ev) => {
+        //ev.preventDefault(); //to stop the form submitting
+        let pro = {
+          //id: Date.now(),
+          age: Number(document.getElementById("age").value),
+          education_level: document.getElementById("educationLevel").value,
+          past_experiences: {
+            sales: document.getElementById("sales").checked,
+            support: document.getElementById("support").checked,
+          },
+          internet_test: {
+            download_speed: Number(
+              document.getElementById("download_speed").value
+            ),
+            upload_speed: Number(document.getElementById("upload_speed").value),
+          },
+          writing_score: Number(document.getElementById("writing_score").value),
+          referral_code: document.getElementById("referral_code").value,
+        };
+        // pros.push(pro);
+        //document.forms[0].reset(); // to clear the form for the next entries
+        //document.querySelector('form').reset();
+
+        //for display purposes only
+        //console.warn("added", { pro });
+        let pre = document.querySelector("#msg pre");
+        pre.textContent = "\n" + JSON.stringify(pro, "\t", 2);
+
+        //saving to localStorage
+        // localStorage.setItem("MyMovieList", JSON.stringify(pros));
+        //console.log({pro});       
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btn").addEventListener("click", addPro);
+      });
+    </script>
+  </body>
 </html>
