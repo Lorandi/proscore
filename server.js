@@ -1,8 +1,4 @@
-const {app,server} = require('./src/config/custon-express')
-
-server.listen(8080, () =>{
-  console.log('server at port 8080')
-})
+const app = require('./src/config/custon-express')
 
 app.listen(3000, (err) => {
   if (err) console.log(err)

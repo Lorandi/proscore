@@ -11,8 +11,7 @@ const proResult = (pro) => {
   const validate = validateData(pro) // validate data
   let proFinalResult = {}
 
-  // if any data from Pros is invalid, will enter de this "if"
-  
+  // if any data from Pros is invalid, will enter de this "if"  
   
   if (validate !== '') {
     proFinalResult = {

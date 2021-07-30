@@ -1,4 +1,4 @@
-const projectsData = require('../src/projectsData')
+const projectsData = require('../src/app/js/projectsData')
 
 describe('keep the datas of projects and sort', () => {
   test('should return the projects', () => {

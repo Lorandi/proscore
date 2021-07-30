@@ -1,4 +1,4 @@
-const proProject = require('../src/proProject')
+const proProject = require('../src/app/js/proProject')
 
 describe('function to  determine the projects in which the professional can participate', () => {
   test('should return projects', () => {

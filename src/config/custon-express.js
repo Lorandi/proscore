@@ -3,17 +3,12 @@ require('marko/express')
 
 const express = require('express')
 const app = express()
-const server = express()
-const routes = require('../app/routes/routes')
-
-
-
-routes.app(app)
-routes.server(server)
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true}))
 
-module.exports ={
-  app,
-  server
-}
+
+const routes = require('../app/routes/routes')
+routes(app)
+
+module.exports = app
