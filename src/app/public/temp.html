@@ -1,0 +1,35 @@
+ <script>
+   const addPro = (ev) => {
+        //ev.preventDefault(); //to stop the form submitting
+        let pro = {
+          //id: Date.now(),
+          age: Number(document.getElementById("age").value),
+          education_level: document.getElementById("educationLevel").value,
+          past_experiences: {
+            sales: document.getElementById("sales").checked,
+            support: document.getElementById("support").checked,
+          },
+          internet_test: {
+            download_speed:Number(document.getElementById("download_speed").value) ,
+            upload_speed: Number(document.getElementById("upload_speed").value),
+          },
+          writing_score:Number(document.getElementById("writing_score").value) ,
+          referral_code: document.getElementById("referral_code").value,
+        };
+        //document.forms[0].reset(); // to clear the form for the next entries
+        //document.querySelector('form').reset();
+
+        //for display purposes only
+        //console.warn("added", { pro });
+        let pre = document.querySelector("#msg pre");
+        pre.textContent = "\n" + JSON.stringify(pro, "\t", 2);
+
+        //saving to localStorage
+        // localStorage.setItem("MyMovieList", JSON.stringify(pros));
+        //console.log({pro});       
+      };
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btn").addEventListener("click", addPro);
+      });
+ </script>
+      
