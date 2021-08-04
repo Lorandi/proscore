@@ -6,7 +6,8 @@
     <title>ProScore</title>
   </head>
   <body>
-    <form action="/"  method="post">
+    <!-- method="post" -->
+   <form action="/" method="post" onsubmit="proController.addPro(event)">
       <div class="formBox">
         <label for="age">Age</label>
         <input type="number" id="age" placeholder="age" required />
@@ -70,16 +71,16 @@
 
       <br />
       <div class="formBox">
-        <button type="submit" id="btn">Click to Add</button>
+        <button type="submit" id="btn" >Add</button>
       </div>
       <div id="msg">
         <pre></pre>
       </div>
     </form>
     <script src="../models/Pro.js"></script>   
+    <script src="../controllers/ProController.js"></script>
     <script>
-      var pro1 = new Pro(35, "no_education", true, true, 51, 51, 0.8, "ref123");
-      console.log(pro1)
-    </script>
+      let proController = new ProController();
+  </script>   
   </body>
 </html>

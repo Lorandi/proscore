@@ -6,10 +6,11 @@
     <title>ProScore</title>
   </head>
   <body>
-    <form action="/"  method="post">
+    <!-- method="post" -->
+   <form action="/" method="post" onsubmit="proController.addPro(event)">
       <div class="formBox">
         <label for="age">Age</label>
-        <input type="number" id="age" name= "age" placeholder="age" required />
+        <input type="number" id="age" placeholder="age" required />
       </div>
       <br />
       <div class="formBox">
@@ -41,7 +42,6 @@
         <input
           type="number"
           id="download_speed"
-          name="download_speed"
           placeholder="Download Speed"
           required
         />
@@ -49,7 +49,6 @@
         <input
           type="number"
           id="upload_speed"
-          name="upload_speed"
           placeholder="Upload Speed"
           required
         />
@@ -60,7 +59,6 @@
         <input
           type="number"
           id="writing_score"
-          name="writing_score"
           placeholder="from 0 to 1"
           required
         />
@@ -68,50 +66,21 @@
       <br />
       <div class="formBox">
         <label for="referral_code">Referral Code</label>
-        <input type="text" id="referral_code" name= "referral_code" placeholder="" />
+        <input type="text" id="referral_code" placeholder="" />
       </div>
 
       <br />
       <div class="formBox">
-        <button type="submit" id="btn">Click to Add</button>
+        <button type="submit" id="btn" >Add</button>
       </div>
       <div id="msg">
         <pre></pre>
       </div>
     </form>
-    <script> 
-      const addPro = (ev) => {
-        //ev.preventDefault(); //to stop the form submitting
-        let pro = {
-          //id: Date.now(),
-          age: Number(document.getElementById("age").value),
-          education_level: document.getElementById("educationLevel").value,
-          past_experiences: {
-            sales: document.getElementById("sales").checked,
-            support: document.getElementById("support").checked,
-          },
-          internet_test: {
-            download_speed:Number(document.getElementById("download_speed").value) ,
-            upload_speed: Number(document.getElementById("upload_speed").value),
-          },
-          writing_score:Number(document.getElementById("writing_score").value) ,
-          referral_code: document.getElementById("referral_code").value,
-        };
-        //document.forms[0].reset(); // to clear the form for the next entries
-        //document.querySelector('form').reset();
-
-        //for display purposes only
-        //console.warn("added", { pro });
-        let pre = document.querySelector("#msg pre");
-        pre.textContent = "\n" + JSON.stringify(pro, "\t", 2);
-
-        //saving to localStorage
-        // localStorage.setItem("MyMovieList", JSON.stringify(pros));
-        //console.log({pro});       
-      };
-      document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById("btn").addEventListener("click", addPro);
-      });
-    </script> 
+    <script src="../models/Pro.js"></script>   
+    <script src="../controllers/ProController.js"></script>
+    <script>
+      let proController = new ProController();
+  </script>   
   </body>
 </html>

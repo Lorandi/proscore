@@ -42,5 +42,6 @@ class Pro{
     }
     get referral_code() {
         return this._referral_code;
-    }   
+    }    
+    
 }
