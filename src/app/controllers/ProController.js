@@ -2,30 +2,31 @@ class ProController {
 
   constructor() {
     let $ = document.querySelector.bind(document);
-    this.age = ($('#age')).value;
-    this.education_level = ($("#educationLevel")).value;
-    this.sales = ($("#sales")).checked;
-    this.support = ($("#support")).checked;
-    this.download_speed = ($("#download_speed")).value;
-    this.upload_speed = ($("#upload_speed")).value;
-    this.writing_score = ($("#writing_score")).value;
-    this.referral_code = ($("#referral_code")).value;
+    this.age = $('#age');
+    this.education_level = ($("#educationLevel"));
+    this.sales = ($("#sales"));
+    this.support = ($("#support"));
+    this.download_speed = ($("#download_speed"));
+    this.upload_speed = ($("#upload_speed"));
+    this.writing_score = ($("#writing_score"));
+    this.referral_code = ($("#referral_code"));
   }
   addPro(event) {
     event.preventDefault();
+   
     let pro = {
-      age: age,
-      education_level: this.education_level,
+      age: this.age.value,
+      education_level: this.education_level.value,
       past_experiences: {
-        sales: this.sales,
-        support: this.support,
+        sales: this.sales.checked,
+        support: this.support.checked,
       },
       internet_test: {
-        download_speed: this.download_speed,
-        upload_speed: this.upload_speed
+        download_speed: this.download_speed.value,
+        upload_speed: this.upload_speed.value
       },
-      writing_score: this.writing_score,
-      referral_code: this.referral_code
+      writing_score: this.writing_score.value,
+      referral_code: this.referral_code.value
     };
 
     console.log(pro);
@@ -36,6 +37,7 @@ class ProController {
     document.querySelector('form').reset()
 
     console.log("\n" + JSON.stringify(pro, "\t", 2));
+    
   }
 }
 
